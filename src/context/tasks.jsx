@@ -28,6 +28,7 @@ function useTasksReducer () {
 
 export function TaskProvider ({ children }) {
   const { state, addTask, updateStatus, deleteTasks } = useTasksReducer()
+
   return (
     <TasksContext.Provider
       value={{

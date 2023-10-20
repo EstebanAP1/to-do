@@ -1,11 +1,13 @@
+import { useFilters } from '../hooks/useFilters'
 import { useTasks } from '../hooks/useTasks'
 
 export function Tasks () {
   const { tasks, updateStatus } = useTasks()
+  const { filterTasks } = useFilters()
 
   return (
     <section className='task-section'>
-      {tasks.map((task, index) => {
+      {filterTasks(tasks).map((task, index) => {
         const completeTask = {
           ...task,
           id: index

@@ -6,8 +6,7 @@ const updateLocalStorage = tasks => {
 }
 
 const STATUS_TYPES = {
-  checked: 'checked',
-  disabled: 'disabled',
+  completed: 'completed',
   pending: 'pending'
 }
 
@@ -39,16 +38,10 @@ const UPDATE_STATE_BY_ACTION = {
         if (task.status === STATUS_TYPES.pending) {
           return {
             desc: task.desc,
-            status: STATUS_TYPES.checked
+            status: STATUS_TYPES.completed
           }
         }
-        if (task.status === STATUS_TYPES.checked) {
-          return {
-            desc: task.desc,
-            status: STATUS_TYPES.disabled
-          }
-        }
-        if (task.status === STATUS_TYPES.disabled) {
+        if (task.status === STATUS_TYPES.completed) {
           return {
             desc: task.desc,
             status: STATUS_TYPES.pending

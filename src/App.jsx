@@ -1,26 +1,25 @@
 import './App.css'
 
+import { TaskProvider } from './context/tasks.jsx'
+import { FiltersProvider } from './context/filters.jsx'
+
 import { Tasks } from './components/tasks'
 import { TaskForm } from './components/TaskForm'
-
-import { useTasks } from './hooks/useTasks'
+import { Footer } from './components/Footer'
 
 function App () {
-  const { deleteTasks } = useTasks()
-
   return (
     <>
-      <main>
-        <h1>To-Do</h1>
-        <TaskForm />
-        <Tasks />
-        <footer>
-          <small>by Estebandido</small>
-          <button className='form-button' onClick={deleteTasks}>
-            Clear
-          </button>
-        </footer>
-      </main>
+      <FiltersProvider>
+        <TaskProvider>
+          <main>
+            <h1>To-Do</h1>
+            <TaskForm />
+            <Tasks />
+            <Footer />
+          </main>
+        </TaskProvider>
+      </FiltersProvider>
     </>
   )
 }

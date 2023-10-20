@@ -65,17 +65,31 @@ form {
   background: #ffbb72;
   border: 2px solid #bd8b56;
   border-radius: 8px;
+  &:hover {
+    border: 2px solid #7d5c39;
+    scale: 1.02;
+  }
+  &:focus {
+    border: 2px solid #7d5c39;
+    box-shadow: 0 0 0 1px #7d5c39;
+    scale: 1.02;
+  }
 }
 
-.form-button:hover {
-  border: 2px solid #7d5c39;
-  scale: 1.02;
-}
-
-.form-button:focus {
-  border: 2px solid #7d5c39;
-  box-shadow: 0 0 0 1px #7d5c39;
-  scale: 1.02;
+.form-select {
+  color: #7d5c39;
+  font-weight: 700;
+  padding: 6px 0;
+  background: #ffbb72;
+  border: 2px solid #bd8b56;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  &:hover {
+    border: 2px solid #7d5c39;
+    scale: 1.02;
+  }
 }
 
 .task-section {
@@ -118,11 +132,7 @@ form {
   cursor: pointer;
 }
 
-.checked {
-  background: #7d5c39;
-}
-
-.disabled {
+.completed {
   background: transparent;
   border-radius: 5px;
   position: relative;
@@ -139,7 +149,7 @@ form {
   }
 }
 
-.disabled ~ .task {
+.completed ~ .task {
   text-decoration: 2px line-through;
 }
 
@@ -149,4 +159,10 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding-top: 10px;
+}
+
+footer section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
