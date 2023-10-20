@@ -11,10 +11,11 @@ function App () {
   return (
     <>
       <main>
-        <h1>To-Do by Esteban</h1>
+        <h1>To-Do</h1>
         <TaskForm />
         <Tasks />
         <footer>
+          <small>by Estebandido</small>
           <button className='form-button' onClick={deleteTasks}>
             Clear
           </button>

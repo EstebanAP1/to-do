@@ -2,13 +2,14 @@ main {
   max-width: 800px;
   background: #fbe7d1;
   border-radius: 10px;
-  margin: 0 auto;
+  margin: auto;
   padding: 1rem 2rem;
   text-align: center;
   overflow: hidden;
 }
 
 form {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +23,8 @@ form {
 
 .form-input {
   padding: 8px 10px;
-  width: 250px;
+  max-width: 250px;
+  min-width: 150px;
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
@@ -87,6 +89,17 @@ form {
   overflow-x: auto;
 }
 
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .task-section {
+    padding: 20px 10px;
+  }
+
+  .form-button {
+    padding: 10px 10px;
+  }
+}
+
 .task-container {
   display: flex;
   flex-direction: row;
@@ -115,7 +128,7 @@ form {
   position: relative;
   &:after {
     position: absolute;
-    top: -8px;
+    top: -10px;
     left: 0;
     right: 0;
     content: "\d7";
@@ -132,6 +145,8 @@ form {
 
 footer {
   display: flex;
-  justify-content: end;
+  font-weight: 700;
+  align-items: center;
+  justify-content: space-between;
   padding-top: 10px;
 }
