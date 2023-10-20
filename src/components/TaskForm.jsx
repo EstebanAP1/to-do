@@ -25,7 +25,7 @@ export function TaskForm () {
             className='form-input'
             placeholder=''
             autoComplete='off'
-            maxLength={40}
+            maxLength={60}
           />
           <label htmlFor={taskId} className='form-label'>
             Write a new task
